@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server'
 import { jwtVerify } from "jose";
 
 export async function middleware(request: NextRequest) {
-    const jwt = request.cookies.get('myTokenName')
+    const jwt = request.cookies.get('myTokenName')?.value
         
     
     if(jwt === undefined){
